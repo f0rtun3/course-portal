@@ -32,7 +32,7 @@ class AchievementHandler {
     /**
      * @var int total number of achievements (comments and lessons) achieved by the user
      */
-    private int $total_unlocked_achievements = 0;
+    public int $total_unlocked_achievements = 0;
 
     /**
      * @var array the user’s unlocked achievements by name
@@ -124,7 +124,7 @@ class AchievementHandler {
      *
      * @return array
      */
-    private function check_badge_requirements(): array {
+    public function check_badge_requirements(): array {
         foreach (config('constants.BADGE-ACHIEVEMENTS') as $badge => $requirement) {
             if ($this->total_unlocked_achievements >= $requirement) {
                 $this->current_badge = $badge;
@@ -183,6 +183,7 @@ class AchievementHandler {
         }
 
     }
+
 
     /**
      * @return array
